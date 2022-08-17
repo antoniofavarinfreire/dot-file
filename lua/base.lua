@@ -8,7 +8,7 @@ vim.wo.number = true
 
 vim.opt.title = true
 vim.opt.autoindent = true
-vim.hlsearch = true
+vim.opt.hlsearch = true
 vim.opt.backup = false
 vim.opt.showcmd = true
 vim.opt.cmdheight = 1
@@ -16,26 +16,29 @@ vim.opt.laststatus = 2
 vim.opt.expandtab = true
 vim.opt.scrolloff = 10
 vim.opt.shell = 'fish'
+vim.opt.backupskip = '/tmp/*,/private/tmp/*'
 vim.opt.inccommand = 'split'
-vim.opt.ignorecase = true 
 vim.opt.smarttab = true
+vim.opt.breakindent = true
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
-vim.opt.ai = true --Auto indent
-vim.opt.si = true --Smart indent
-vim.opt.wrap = false --No wrap lines
+vim.opt.ai = true -- Auto indent
+vim.opt.si = true -- Smart indent
+vim.opt.wrap = false -- No wrap lines
 vim.opt.backspace = 'start,eol,indent'
-vim.opt.path:append { '**' } -- Finding file -Searche down into the subfolders
+vim.opt.path:append { '**' } -- Find files - Search down into sobfolders
 vim.opt.wildignore:append { '*/node_modules/*' }
 
---Undercurl
-vim.cmd([[let &t_Cs = "\e[4:3m"]])
-vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
---Turn off paste mode when leaving insert
+--Undercurl
+vim.cmd ([[let &t_Cs = "\e[4:3m"]])
+vim.cmd ([[let &t_Ce = "\e[4:0m"]])
+
+-- Turn off paste mode whe leaving insert 
 vim.api.nvim_create_autocmd("InsertLeave", {
-  pattern = '*', 
-  command = "set nopaste"
+   pattern = '*',
+   command = 'set nopaste'
 })
 
-vim.opt.formatoptions:append { 'r' }  
+
+vim.opt.formatoptions:append { 'r' }
